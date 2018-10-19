@@ -44,11 +44,13 @@ class TopTenViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 let jsonResponse = try JSONSerialization.jsonObject(with: data, options: [])
                 if let dict = jsonResponse as? [String: AnyObject] {
                     if let feed = dict["feed"], let results = feed["results"] as? [[String: Any]] {
-                        for res in results {
+                        for (i, res) in results.enumerated() {
                             self.albums.append(Album(artistName: res["artistName"] as! String,
                                                 releaseDate: res["releaseDate"] as! String,
                                                 name: res["name"] as! String,
-                                                imageUrl: res["artworkUrl100"] as! String))
+                                                imageUrl: res["artworkUrl100"] as! String,
+                                                explicit: res["contentAdvisoryRating"] as! String == "Explicit" ? true : false,
+                                                rank: i))
                         }
                         DispatchQueue.main.async { // Update tableView
                             self.tableView.reloadData()
@@ -63,7 +65,7 @@ class TopTenViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fetchTopAlbums(count: 10)
+        fetchTopAlbums()
         print("View loaded.")
 
         // Do any additional setup after loading the view.
@@ -79,5 +81,11 @@ class TopTenViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? AlbumDetailViewController, let row = tableView.indexPathForSelectedRow?.row {
+            destination.albumChoice = albums[row]
+        }
+    }
 
 }

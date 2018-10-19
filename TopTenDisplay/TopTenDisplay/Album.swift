@@ -12,6 +12,8 @@ import UIKit
 class Album {
     let artistName, releaseDate, name: String
     let imageUrl: URL
+    let isExplicit: Bool
+    let rank: Int
     var albumImage: UIImage? // Optional because we cannot guarantee a good url string.
     
     func fetchAlbumImage(from dataUrl: URL) {
@@ -33,10 +35,12 @@ class Album {
         downloadTask.resume() // Run the request without blocking.
     }
     
-    init(artistName: String, releaseDate: String, name: String, imageUrl: String) {
+    init(artistName: String, releaseDate: String, name: String, imageUrl: String, explicit: Bool, rank: Int) {
         self.artistName = artistName
         self.releaseDate = releaseDate
         self.name = name
+        self.isExplicit = explicit
+        self.rank = rank
         self.imageUrl = URL(string: imageUrl)!
         fetchAlbumImage(from: self.imageUrl)
     }

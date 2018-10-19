@@ -13,6 +13,7 @@
 		53BC02A22177E22B00BF4991 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53BC02A02177E22B00BF4991 /* LaunchScreen.storyboard */; };
 		53BC02AA2177E24700BF4991 /* TopTenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BC02A92177E24700BF4991 /* TopTenViewController.swift */; };
 		53BC02AC2177E57700BF4991 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BC02AB2177E57700BF4991 /* Album.swift */; };
+		53BC02AE217969FC00BF4991 /* AlbumDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BC02AD217969FC00BF4991 /* AlbumDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		53BC02A32177E22B00BF4991 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53BC02A92177E24700BF4991 /* TopTenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTenViewController.swift; sourceTree = "<group>"; };
 		53BC02AB2177E57700BF4991 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		53BC02AD217969FC00BF4991 /* AlbumDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				53BC02972177E22800BF4991 /* AppDelegate.swift */,
 				53BC02AB2177E57700BF4991 /* Album.swift */,
 				53BC02A92177E24700BF4991 /* TopTenViewController.swift */,
+				53BC02AD217969FC00BF4991 /* AlbumDetailViewController.swift */,
 				53BC029B2177E22800BF4991 /* Main.storyboard */,
 				53BC029E2177E22B00BF4991 /* Assets.xcassets */,
 				53BC02A02177E22B00BF4991 /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				53BC02AA2177E24700BF4991 /* TopTenViewController.swift in Sources */,
+				53BC02AE217969FC00BF4991 /* AlbumDetailViewController.swift in Sources */,
 				53BC02982177E22800BF4991 /* AppDelegate.swift in Sources */,
 				53BC02AC2177E57700BF4991 /* Album.swift in Sources */,
 			);
