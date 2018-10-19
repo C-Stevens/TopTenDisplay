@@ -24,7 +24,7 @@ class AlbumDetailViewController: UIViewController {
         albumLabel.text = albumChoice?.name
         artistLabel.text = albumChoice?.artistName
         albumArtwork.image = albumChoice?.albumImage
-        rankLabel.text = "Currently ranked #\(albumChoice?.rank ?? 0)"
+        rankLabel.text = "Currently ranked #\((albumChoice?.rank ?? 0) + 1 )"
         explicitLabel.text = albumChoice?.isExplicit == true ? "Not safe for work" : "Safe for work"
         releaseLabel.text = "Released on \(albumChoice?.releaseDate ?? "")"
 
