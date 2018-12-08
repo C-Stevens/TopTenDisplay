@@ -28,6 +28,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Hi9-kI-dke">
+                                                    <rect key="frame" x="35.5" y="27.5" width="20" height="20"/>
+                                                </activityIndicatorView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hgT-R9-cpf">
                                                     <rect key="frame" x="8" y="0.0" width="75" height="75"/>
                                                     <constraints>
@@ -63,10 +66,12 @@
                                                 <constraint firstItem="hgT-R9-cpf" firstAttribute="leading" secondItem="ScK-xZ-Pxv" secondAttribute="leading" constant="8" id="2Q8-Nq-KJz"/>
                                                 <constraint firstAttribute="trailing" secondItem="LeL-6n-UeA" secondAttribute="trailing" constant="8" id="ADr-gT-OHg"/>
                                                 <constraint firstAttribute="trailing" secondItem="fUE-h7-7BU" secondAttribute="trailing" constant="8" id="ARU-ad-3Sa"/>
+                                                <constraint firstItem="Hi9-kI-dke" firstAttribute="centerX" secondItem="hgT-R9-cpf" secondAttribute="centerX" id="C5k-30-fJV"/>
                                                 <constraint firstAttribute="bottom" secondItem="hgT-R9-cpf" secondAttribute="bottom" id="E1t-v9-V0O"/>
                                                 <constraint firstItem="fUE-h7-7BU" firstAttribute="centerY" secondItem="ScK-xZ-Pxv" secondAttribute="centerY" id="JCX-pD-S67"/>
                                                 <constraint firstItem="hgT-R9-cpf" firstAttribute="top" secondItem="ScK-xZ-Pxv" secondAttribute="top" id="JDi-Eg-qEb"/>
                                                 <constraint firstItem="fUE-h7-7BU" firstAttribute="leading" secondItem="hgT-R9-cpf" secondAttribute="trailing" constant="8" id="QFA-oM-5Fb"/>
+                                                <constraint firstItem="Hi9-kI-dke" firstAttribute="centerY" secondItem="hgT-R9-cpf" secondAttribute="centerY" id="ZG8-ku-gWe"/>
                                                 <constraint firstItem="LeL-6n-UeA" firstAttribute="centerY" secondItem="ScK-xZ-Pxv" secondAttribute="centerY" id="kMr-Lp-WS6"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -75,6 +80,7 @@
                                             <outlet property="cellArtistNameLabel" destination="T61-OY-Tcz" id="uKS-aa-Qob"/>
                                             <outlet property="cellImageView" destination="hgT-R9-cpf" id="fxV-i5-ymM"/>
                                             <outlet property="cellRankLabel" destination="LeL-6n-UeA" id="wVg-gU-bTa"/>
+                                            <outlet property="imageLoader" destination="Hi9-kI-dke" id="jT1-bG-4pY"/>
                                             <segue destination="qNq-Ek-Y3U" kind="show" id="yrL-bY-yvc"/>
                                         </connections>
                                     </tableViewCell>
@@ -94,12 +100,25 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Top Albums" id="7NC-ok-4VJ"/>
+                    <navigationItem key="navigationItem" title="Top Albums" id="7NC-ok-4VJ">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="G9q-eL-5lR">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="MbQ-8J-S15">
+                                <rect key="frame" x="268" y="7" width="91" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Show Explicit"/>
+                                <connections>
+                                    <action selector="explicitButton:" destination="TGA-aF-bHk" eventType="touchUpInside" id="u9t-mx-hS3"/>
+                                    <action selector="explicitButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xze-TK-ova"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="4vL-gt-r1k" id="DgS-7Q-JE9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="TGA-aF-bHk" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="431" y="-188"/>
         </scene>
